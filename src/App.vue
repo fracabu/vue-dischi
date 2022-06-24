@@ -2,6 +2,7 @@
   <div id="app">
     <TheHeader></TheHeader>
     <ListaDischi></ListaDischi>
+    <TheDisco></TheDisco>
   
   </div>
 </template>
@@ -9,6 +10,7 @@
 <script>
 import TheHeader from './components/TheHeader.vue'
 import ListaDischi from './components/ListaDischi.vue'
+import TheDisco from './components/Disco.vue'
 
 
 
@@ -17,7 +19,8 @@ export default {
   name: 'App',
   components: {
     TheHeader,
-    ListaDischi
+    ListaDischi,
+    TheDisco
 }
 }
 </script>
