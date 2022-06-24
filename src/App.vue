@@ -10,7 +10,7 @@
 <script>
 import TheHeader from './components/TheHeader.vue'
 import ListaDischi from './components/ListaDischi.vue'
-import TheDisco from './components/Disco.vue'
+import TheDisco from './components/TheDisco.vue'
 
 
 

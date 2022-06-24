@@ -1,12 +1,11 @@
 <template>
-    <div>  
-        {{ListaDischi}}
+    <div>
+        {{ ListaDischi }}
         <div class="container">
-            <div class="row">
-                <div class="col" v-for="disco in ListaDischi" :key="disco.year">
+            <div class="row row-cols-5" v-for="disco in ListaDischi" :key="disco.year">
+                <div class="col mb-5">
                     <TheDisco></TheDisco>
                 </div>
-                
             </div>
         </div>
     </div>
