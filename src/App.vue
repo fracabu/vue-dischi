@@ -1,37 +1,33 @@
 <template>
   <div id="app">
-    <TheHeader></TheHeader>
-    <ListaDischi></ListaDischi>
-    <TheDisco></TheDisco>
+    <NavBar></NavBar>
+    <AlbumsList></AlbumsList>
+
   
   </div>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
-import ListaDischi from './components/ListaDischi.vue'
-import TheDisco from './components/TheDisco.vue'
+import NavBar from "./components/NavBar.vue";
+import AlbumsList from "./components/AlbumsList.vue";
+
+
 
 
 
 
 export default {
   name: 'App',
-  components: {
-    TheHeader,
-    ListaDischi,
-    TheDisco
-}
-}
+  components: {NavBar,AlbumsList},
+  data(){
+    return{};
+  },
+  mounted(){},
+};
+
+
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import"./assets/main";
 </style>
