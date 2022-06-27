@@ -28,10 +28,23 @@ export default {
             axios.get(this.urlDischi)
                 .then((resp) => {
                     this.albumsList = resp.data.response;
+
+                    this.$emit("genresUpdated",this.listaGeneri())
                 })
                 .catch(() => {
                     alert("A causa di un problema l'operazione non è andata a buon fine");
                 });
+        },
+        listaGeneri(){
+            const lista = [];
+            
+            this.albumsList.forEach( album => {
+                if(!lista.includes(album.genre)){
+                    lista.push(album.genre)
+                }
+                
+            });
+            return lista
         }
     },
     mounted() {
