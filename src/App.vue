@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <NavBar></NavBar>
-    <AlbumsList></AlbumsList>
 
-  
+    <div class="container">
+      <AlbumsList></AlbumsList>
+    </div>
+
+
   </div>
 </template>
 
@@ -18,11 +21,11 @@ import AlbumsList from "./components/AlbumsList.vue";
 
 export default {
   name: 'App',
-  components: {NavBar,AlbumsList},
-  data(){
-    return{};
+  components: { NavBar, AlbumsList },
+  data() {
+    return {};
   },
-  mounted(){},
+  mounted() { },
 };
 
 
@@ -30,4 +33,15 @@ export default {
 
 <style lang="scss">
 @import"./assets/main";
+
+
+#app{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+};
+
+.container{
+  overflow: auto;
+}
 </style>

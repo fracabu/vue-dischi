@@ -1,6 +1,6 @@
 <template>
-    <div class="py-5 container">
-        <div class="row row-cols-5">
+    <div class="py-5">
+        <div class="row row-cols-5 g-3">
             <div class="col" v-for="(album, i) in albumsList" :key="i">
                 <AlbumCard :album="album"></AlbumCard>
             </div>
