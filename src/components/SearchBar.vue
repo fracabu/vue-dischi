@@ -1,11 +1,11 @@
 <template>
     <div class="d-flex">
         <div class="input-group">
-            <select type="text" class="form-select">
+            <select type="text" class="form-select" v-model="genre">
                 <option value="">scegli un genere</option>
                 <option v-for="(genere, i) in listaGeneri" :key="i" value="genere">{{genere}}</option>
             </select>
-            <button class="btn btn-primary"> Cerca</button>
+            <button class="btn btn-primary" @click="onSearchClick"> Cerca</button>
         </div>
 
     </div>
@@ -14,9 +14,19 @@
 <script>
 export default{
     props:{
-        listaGeneri : Array
-    }
-}
+        listaGeneri : Array,
+    },
+    data(){
+        return{
+            genre:[]
+        }
+    },
+    methods:{
+        onSearchClick(){
+            this.$emit("searchGenre" , this.genre);
+        },
+    },
+};
 
 </script>
 

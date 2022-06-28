@@ -1,7 +1,10 @@
 <template>
     <div class="py-5">
+        <div class="alert alert-info">
+            genere attivo :{{searchGenre}}
+        </div>
         <div class="row row-cols-5 g-3">
-            <div class="col" v-for="(album, i) in albumsList" :key="i">
+            <div class="col" v-for="(album, i) in  filteredAlbums" :key="album.title + i">
                 <AlbumCard :album="album"></AlbumCard>
             </div>
         </div>
@@ -13,6 +16,9 @@ import axios from "axios";
 import AlbumCard from "./AlbumCard.vue";
 
 export default {
+    props:{
+        searchGenre : String,
+    },
     data() {
         return {
             urlDischi: "https://flynn.boolean.careers/exercises/api/array/music",
@@ -23,6 +29,18 @@ export default {
             albumsList: []
         };
     },
+    computed:{
+        filteredAlbums(){
+            if(!this.searchGenre){
+                return this.albumsList;
+            }
+            return this.albumsList.filter((album)=>{
+                return album.genre === this.searchGenre
+            });
+            },
+        },
+    
+
     methods: {
         fetchData() {
             axios.get(this.urlDischi)
