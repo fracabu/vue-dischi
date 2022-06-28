@@ -3,7 +3,7 @@
         <div class="input-group">
             <select type="text" class="form-select" v-model="genre">
                 <option value="">scegli un genere</option>
-                <option v-for="(genere, i) in listaGeneri" :key="i" value="genere">{{genere}}</option>
+                <option v-for="(genere, i) in listaGeneri" :key="i" value="">{{genere}}</option>
             </select>
             <button class="btn btn-primary" @click="onSearchClick"> Cerca</button>
         </div>
