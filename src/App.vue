@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <NavBar></NavBar>
+    <NavBar :lista-generi = "listaGeneri"></NavBar>
 
     <div class="container">
-      <AlbumsList></AlbumsList>
+      <AlbumsList @genresUpdated="onGenresUpdate"></AlbumsList>
     </div>
 
 
@@ -23,7 +23,20 @@ export default {
   name: 'App',
   components: { NavBar, AlbumsList },
   data() {
-    return {};
+    return {
+      //salvo localmente nel data la lista che ho ricevuto con l'emit per inoltrarla ad una prop nel componente NavBar
+      // in modo che ogni volta che la variabile (listaGeneri) verrà modificata anche la prop verrà automaticamente
+      // modificata
+      listaGeneri:[]
+    };
+  },
+
+  methods:{
+    // funzione per leggere l'emit con la listageneri
+    onGenresUpdate(listaGeneri){
+      console.log(listaGeneri);
+      this.listaGeneri = listaGeneri
+    }
   },
   mounted() { },
 };
